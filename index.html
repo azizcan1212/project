@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GET My Song</title>
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                font-family: 'Arial', sans-serif;
+            }
+            
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                opacity: 0.7;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+            
+            .container {
+                position: relative;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0 20px;
+            }
+            
+            
+            h1 {
+                color: white;
+                text-align: center;
+                font-size: 2.5em;
+                text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            }
+            
+            .search-input {
+                width: 100%;
+                padding: 15px;
+                border: none;
+                border-radius: 50px;
+                margin-bottom: 15px;
+                font-size: 16px;
+                box-sizing: border-box;
+                background-color: rgba(255, 255, 255, 0.9);
+                transition: all 0.3s ease;
+                padding-left: 20px;
+            }
+            
+            .search-input:focus {
+                outline: none;
+                box-shadow: 0 0 10px #4A00E0;
+                background-color: white;
+            }
+            .search-button {
+                background: linear-gradient(to right, #FF5E62, #FF9966);
+                color: white;
+                border: none;
+                padding: 15px 30px;
+                border-radius: 50px;
+                font-size: 18px;
+                cursor: pointer;
+                margin-top: 10px;
+                width: 60%;
+                font-weight: bold;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            #lyrics {
+                overflow-y: auto;
+                max-height: 450px;
+            }
+            #lyrics::-webkit-scrollbar {
+                width: 6px;
+            }
+
+
+            #lyrics::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.2); 
+                border-radius: 10px;
+            }
+            
+            .search-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                background: linear-gradient(to right, #FF9966, #FF5E62);
+            }
+        </style>
+    </head>
+    <body>
+        <img src="background.jpeg" alt="Fullscreen Background Image">
+        
+        <div class="container">
+            <div class="search-form">
+                <h1>GET MY SONG</h1>
+                <form id="songSearchForm">
+                    <input type="text" class="search-input" id="songName" placeholder="Şarkı Adı" required>
+                    <input type="text" class="search-input" id="artistName" placeholder="Şarkıcı Adı" required>
+                    <button type="submit" class="search-button" id="searchBtn">SEARCH</button>
+                </form>
+
+            </div>
+    <div id="lyrics" style="display: none; color: rgb(235, 228, 228); margin-top: 20px; text-align: center; background: linear-gradient(to right, #FF9966, #FF5E62); padding: 40px; border-radius: 20px;width: 40;"></div>
+        </div>
+        <script src="script_part.js"></script>
+    </body>
+    </html>
